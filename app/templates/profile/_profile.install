@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Implements hook_install()
+ */
+function <%= project_name %>_install() {
+  _<%= project_name %>_install_theme();
+}
+
+function _<%= project_name %>_install_theme() {
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'seven')
+    ->execute();
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
+
+  // enable anb theme
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', '<%= project_name %>_theme')
+    ->execute();
+
+  // set the site theme
+  variable_set('theme_default', '<%= project_name %>_theme');
+}
