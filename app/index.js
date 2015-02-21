@@ -33,14 +33,19 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
 
   writing: {
     project: function () {
-      this.dest.mkdir('htdocs');
-      this.dest.mkdir('patches');
-      this.src.copy('keep', 'patches/.keep');
+      // config files
       this.src.copy('gitignore', '.gitignore');
+      this.src.copy('editorconfig', '.editorconfig');
 
+      // build files
       this.src.copy('_Makefile', 'Makefile');
       this.src.copy('_drush.make', 'drush.make');
       this.src.copy('_drush.dev.make', 'drush.dev.make');
+
+      // basic project structure
+      this.dest.mkdir('htdocs');
+      this.dest.mkdir('patches');
+      this.src.copy('keep', 'patches/.keep');
     },
 
     drupal: function () {
@@ -69,7 +74,6 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
     },
 
     projectfiles: function () {
-      // this.src.copy('editorconfig', '.editorconfig');
       // this.src.copy('jshintrc', '.jshintrc');
     }
   },
