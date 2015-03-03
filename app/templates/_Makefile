@@ -25,7 +25,7 @@ clean:
 	-rm $(ROOT)/*.txt
 
 chmod:
-	chmod a+w $(ROOT)/sites/default
+	-chmod a+w $(ROOT)/sites/default
 
 drushmake:
 	cd $(ROOT) && drush make --no-gitinfofile ../$(DRUSHMAKE) .
