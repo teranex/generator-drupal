@@ -10,6 +10,8 @@ projects[] = "drupal"
 ; contrib modules
 projects[] = ctools
 projects[] = features
+projects[] = pathauto
+projects[] = strongarm
 projects[] = views
 
 ; contrib themes

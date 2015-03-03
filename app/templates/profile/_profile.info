@@ -2,3 +2,29 @@ name = <%= project_name %>
 description = Installation profile for <%= project_name %>
 version = 1.x
 core = 7.x
+
+; Core modules
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = search
+dependencies[] = taxonomy
+dependencies[] = toolbar
+dependencies[] = text
+dependencies[] = user
+
+; Contrib modules
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = pathauto
+dependencies[] = strongarm
