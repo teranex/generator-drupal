@@ -9,20 +9,20 @@ DEVMODULES = devel \
 build: clean chmod drushmake patch finish
 
 clean:
-	-rm -r $(ROOT)/sites/all
-	-rm -r $(ROOT)/includes
-	-rm -r $(ROOT)/misc
-	-rm -r $(ROOT)/modules
-	-rm -r $(ROOT)/scripts
-	-rm -r $(ROOT)/themes
-	-rm -r $(ROOT)/profiles/minimal
-	-rm -r $(ROOT)/profiles/standard
-	-rm -r $(ROOT)/profiles/testing
+	-rm -rf $(ROOT)/sites/all
+	-rm -rf $(ROOT)/includes
+	-rm -rf $(ROOT)/misc
+	-rm -rf $(ROOT)/modules
+	-rm -rf $(ROOT)/scripts
+	-rm -rf $(ROOT)/themes
+	-rm -rf $(ROOT)/profiles/minimal
+	-rm -rf $(ROOT)/profiles/standard
+	-rm -rf $(ROOT)/profiles/testing
 	-rm -f $(ROOT)/web.config
-	-rm -r $(ROOT)/.htaccess
-	-rm -r $(ROOT)/.gitignore
-	-rm $(ROOT)/*.php
-	-rm $(ROOT)/*.txt
+	-rm -rf $(ROOT)/.htaccess
+	-rm -rf $(ROOT)/.gitignore
+	-rm -f $(ROOT)/*.php
+	-rm -f $(ROOT)/*.txt
 
 chmod:
 	-chmod a+w $(ROOT)/sites/default
