@@ -4,7 +4,9 @@ DEVMAKE := drush.dev.make
 
 DEVMODULES = devel \
 			 diff \
-			 module_filter
+			 module_filter \
+			 views_ui \
+			 field_ui 
 
 build: clean chmod drushmake patch finish
 
