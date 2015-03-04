@@ -20,8 +20,7 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
     var prompts = [{
       // type: 'confirm',
       name: 'projectName',
-      message: 'What is the project name?',
-      default: 'myproject'
+      message: 'What is the project name? (for example: inuitsweb)',
     }];
 
     this.prompt(prompts, function (props) {
@@ -78,9 +77,12 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
     }
   },
 
-  // end: function () {
-  //   this.installDependencies();
-  // }
+  end: function () {
+    // this.installDependencies();
+    this.log(yosay(
+      'Your new project is ready. You can now run `make` to build the project. Happy coding!'
+    ));
+  }
 });
 
 module.exports = DrupalProjectGenerator;
