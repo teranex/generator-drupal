@@ -28,3 +28,4 @@ dependencies[] = ctools
 dependencies[] = features
 dependencies[] = pathauto
 dependencies[] = strongarm
+dependencies[] = views
