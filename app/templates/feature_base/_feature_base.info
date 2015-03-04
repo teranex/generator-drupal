@@ -1,0 +1,16 @@
+name = <%= project_name %> Base
+description = Basic functionality for <%= project_name %>
+core = 7.x
+package = <%= project_name %>
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = search
+dependencies[] = user
+features[features_api][] = api:2
+features[filter][] = plain_text
+features[menu_custom][] = main-menu
+features[user_permission][] = access content
+features[user_permission][] = cancel account
+features[user_permission][] = search content

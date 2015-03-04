@@ -68,6 +68,15 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
       this.template("theme/_theme.info", 'htdocs/profiles/' + this.projectName + '/themes/' + this.projectName + '_theme/' + this.projectName + '_theme.info', context);
       this.template("theme/_template.php", 'htdocs/profiles/' + this.projectName + '/themes/' + this.projectName + '_theme/template.php', context);
 
+      // base feature
+      this.dest.mkdir('htdocs/profiles/' + this.projectName + '/modules');
+      this.dest.mkdir('htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base');
+      this.template("feature_base/_feature_base.features.filter.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.filter.inc', context);
+      this.template("feature_base/_feature_base.features.menu_custom.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.menu_custom.inc', context);
+      this.template("feature_base/_feature_base.features.user_permission.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.user_permission.inc', context);
+      this.template("feature_base/_feature_base.info", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.info', context);
+      this.template("feature_base/_feature_base.module", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.module', context);
+
       // this.src.copy('_package.json', 'package.json');
       // this.src.copy('_bower.json', 'bower.json');
     },

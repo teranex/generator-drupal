@@ -29,3 +29,6 @@ dependencies[] = features
 dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = views
+
+; Features
+dependencies[] = <%= project_name %>_base
