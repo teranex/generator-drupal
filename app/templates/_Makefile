@@ -51,6 +51,10 @@ finish:
 	@echo 'Finished.'
 
 dev: devmake devenable
+	@if [ -f Makefile.custom ]; \
+	then \
+		$(MAKE) ROOT=$(ROOT) DRUSH=$(DRUSH) -f Makefile.custom devenable; \
+	fi;
 
 devmake:
 	cd $(ROOT) && $(DRUSH) make --no-core --no-gitinfofile ../$(DEVMAKE) .

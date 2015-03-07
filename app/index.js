@@ -53,6 +53,7 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
 
       // build files
       this.template('_Makefile', 'Makefile', context);
+      this.template('_Makefile.custom.sample', 'Makefile.custom.sample', context);
       this.src.copy('_drush.make', 'drush.make');
       this.src.copy('_drush.dev.make', 'drush.dev.make');
 

@@ -1,0 +1,11 @@
+# Copy this file to Makefile.custom to add custom commands to some of the commands
+# in the default Makefile. For example the 'devenable' target is executed after the
+# default devenable is run, so you can further customize the development version of
+# your Drupal site, by example by enabling additional modules
+
+devenable:
+	@echo executing my custom makefile
+	# enable the admin menu
+	cd $(ROOT) && $(DRUSH) -y en admin_menu
+	# give anonymous user access to devel information, useful for debugging
+	cd $(ROOT) && $(DRUSH) role-add-perm 'anonymous user' 'access devel information'
