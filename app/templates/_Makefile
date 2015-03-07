@@ -71,4 +71,4 @@ devenable:
 devinstall: install dev
 
 install:
-	cd $(ROOT) && $(DRUSH) -y si <%= project_name %> --account-pass=admin
+	cd $(ROOT) && $(DRUSH) -y si <%= project_name %> --account-pass=admin --site-name="<%= readable_name %>"
