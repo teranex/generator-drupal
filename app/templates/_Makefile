@@ -56,7 +56,11 @@ devmake:
 	cd $(ROOT) && $(DRUSH) make --no-core --no-gitinfofile ../$(DEVMAKE) .
 
 devenable:
+	# enable our default development modules
 	cd $(ROOT) && $(DRUSH) -y en $(DEVMODULES)
+	# set username and password of user 1 to 'admin'
+	cd $(ROOT) && drush sqlq "update users set name='admin' where uid=1;"
+	cd $(ROOT) && drush upwd admin --password=admin
 	# run Makefile.custom if it exists to give to developer the opportunity
 	# to further customize the development environment
 	@if [ -f Makefile.custom ]; \
