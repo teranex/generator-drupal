@@ -75,6 +75,9 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
       this.template("feature_base/_feature_base.features.filter.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.filter.inc', context);
       this.template("feature_base/_feature_base.features.menu_custom.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.menu_custom.inc', context);
       this.template("feature_base/_feature_base.features.user_permission.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.user_permission.inc', context);
+      this.template("feature_base/_feature_base.features.user_role.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.user_role.inc', context);
+      this.template("feature_base/_feature_base.strongarm.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.strongarm.inc', context);
+      this.template("feature_base/_feature_base.features.inc", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.features.inc', context);
       this.template("feature_base/_feature_base.info", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.info', context);
       this.template("feature_base/_feature_base.module", 'htdocs/profiles/' + this.projectName + '/modules/' + this.projectName + '_base/' + this.projectName + '_base.module', context);
 
