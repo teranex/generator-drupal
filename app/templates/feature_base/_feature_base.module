@@ -1,6 +1,6 @@
 <?php
 /**
  * @file
- * Code for the <%= project_name %> Base feature.
+ * Code for the <%= readable_name %> Base feature.
  */
 include_once '<%= project_name %>_base.features.inc';

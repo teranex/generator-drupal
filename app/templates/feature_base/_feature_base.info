@@ -1,7 +1,7 @@
-name = <%= project_name %> Base
-description = Basic functionality for <%= project_name %>
+name = <%= readable_name %> Base
+description = Basic functionality for <%= readable_name %>
 core = 7.x
-package = <%= project_name %>
+package = <%= readable_name %>
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = filter

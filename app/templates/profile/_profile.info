@@ -1,5 +1,5 @@
-name = <%= project_name %>
-description = Installation profile for <%= project_name %>
+name = <%= readable_name %>
+description = Installation profile for <%= readable_name %>
 version = 1.x
 core = 7.x
 

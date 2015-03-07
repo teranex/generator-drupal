@@ -21,10 +21,14 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
       // type: 'confirm',
       name: 'projectName',
       message: 'What is the project name? (for example: inuitsweb)',
+    },{
+      name: 'readableName',
+      message: 'What is the readable project name? (for example: Inuits Website)',
     }];
 
     this.prompt(prompts, function (props) {
       this.projectName = props.projectName;
+      this.readableName = props.readableName;
 
       done();
     }.bind(this));
@@ -48,7 +52,8 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
 
     custom: function () {
       var context = {
-        project_name: this.projectName
+        project_name: this.projectName,
+        readable_name: this.readableName,
       };
 
       // build files
