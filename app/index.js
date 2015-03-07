@@ -36,11 +36,6 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
       this.src.copy('gitignore', '.gitignore');
       this.src.copy('editorconfig', '.editorconfig');
 
-      // build files
-      this.src.copy('_Makefile', 'Makefile');
-      this.src.copy('_drush.make', 'drush.make');
-      this.src.copy('_drush.dev.make', 'drush.dev.make');
-
       // basic project structure
       this.dest.mkdir('htdocs');
       this.dest.mkdir('patches');
@@ -55,6 +50,11 @@ var DrupalProjectGenerator = yeoman.generators.Base.extend({
       var context = {
         project_name: this.projectName
       };
+
+      // build files
+      this.template('_Makefile', 'Makefile', context);
+      this.src.copy('_drush.make', 'drush.make');
+      this.src.copy('_drush.dev.make', 'drush.dev.make');
 
       // installation profile
       this.dest.mkdir('htdocs/profiles/' + this.projectName);
