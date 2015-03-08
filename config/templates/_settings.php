@@ -585,3 +585,9 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+// Configuration for environment_indicator module. Only used if the module is enabled
+$conf['environment_indicator_overwrite'] = TRUE;
+$conf['environment_indicator_overwritten_name'] = 'LOCAL INSTALL';
+$conf['environment_indicator_overwritten_color'] = '#3f2856';
+$conf['environment_indicator_overwritten_position'] = 'bottom';
+$conf['environment_indicator_overwritten_fixed'] = TRUE;

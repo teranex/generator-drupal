@@ -9,3 +9,4 @@ projects[] = admin_menu
 projects[] = module_filter
 projects[] = devel
 projects[] = diff
+projects[] = environment_indicator
