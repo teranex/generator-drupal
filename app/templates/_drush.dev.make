@@ -11,3 +11,4 @@ projects[] = devel
 projects[] = diff
 projects[] = environment_indicator
 projects[] = dummyimage
+projects[] = reroute_email
