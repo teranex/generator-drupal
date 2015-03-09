@@ -1,47 +1,69 @@
-# generator-drupal-project [![Build Status](https://secure.travis-ci.org/teranex/generator-drupal-project.png?branch=master)](https://travis-ci.org/teranex/generator-drupal-project)
+# Inuits Drupal Project Generator
 
-> [Yeoman](http://yeoman.io) generator
+This project is the [Yeoman](http://yeoman.io) generator we use at [Inuits](http://inuits.eu) to quickly generate the new [Drupal](http://drupal.org) projects. It generates the Makefiles we use to build our projects using `drush make`, the basic installation profile, the theme and the base feature.
 
+## Installation
 
-## Getting Started
-
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+First install Yeoman, if you have not yet done so.
 
 ```bash
-npm install -g yo
+sudo npm install -g yo
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-drupal-project from npm, run:
+Then clone this repository
 
 ```bash
-npm install -g generator-drupal-project
+git clone git@github.com:Inuits/generator-drupal.git
 ```
 
-Finally, initiate the generator:
+Finally link it as a [npm](https://npmjs.org) module
 
 ```bash
-yo drupal-project
+cd generator-drupal
+sudo npm link
 ```
 
-### Getting To Know Yeoman
+## Generating a project
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+To create and setup a project using this generator we follow a few steps. First we generate the basic project structure. Then we build the entire Drupal tree using `drush make`. Then you need to create your configuration (the settings.php file). Finally you can install the project using your newly generated installation profile.
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+So let's do this. First run `yo` in an empty folder where you want to generate a project:
+
+```bash
+yo drupal
+```
+
+After answering some questions regarding the project name and readable project name, you are now ready to download Drupal core and some contrib-modules. To do this:
+
+```bash
+make
+```
+
+Then it's time to generate the configuration. Each developer who will work on the project will have to do this.
+
+```bash
+yo drupal:config
+```
+
+Finally it's time to install the Drupal site. As you will be developing the site, let's also enable some development modules which will not be enabled on your staging/production servers.
+
+```bash
+make devinstall
+```
+
+## Useful commands in the Makefile
+
+The generated `Makefile` has some different commands. Here are the most useful ones:
+
+* `make`: By default the Makefile will completely rebuild your Drupal, using `drush make`
+* `make install`: Install your Drupal site using the installation profile
+* `make dev`: Enable development modules and additional configuration for use during development. Note that each developer can further customize these to his personal preferences by writing a `Makefile.custom` file (see `Makefile.custom.sample` for an example)
+* `make devinstall`: combine the `install` and `dev` steps
 
 
 ## License
 
-MIT
+This Yeoman Drupal Generator is licensed under the MIT license.
+
+Copyright (c) 2015 Inuits, Jeroen Budts
+

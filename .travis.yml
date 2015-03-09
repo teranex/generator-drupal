@@ -3,5 +3,5 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-drupal-project' ]; then cd .. && eval "mv $currentfolder generator-drupal-project" && cd generator-drupal-project; fi
+  - if [ "$currentfolder" != 'generator-drupal' ]; then cd .. && eval "mv $currentfolder generator-drupal" && cd generator-drupal; fi
 
