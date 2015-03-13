@@ -1,13 +1,6 @@
 ROOT := htdocs
 DRUSHMAKE := drush.make
-DEVMAKE := drush.dev.make
 DRUSH := drush
-
-DEVMODULES = devel \
-			 diff \
-			 module_filter \
-			 views_ui \
-			 field_ui 
 
 build: clean chmod drushmake patch finish
 
@@ -50,28 +43,7 @@ finish:
 	-rm -r $(ROOT)/xmlrpc.php
 	@echo 'Finished.'
 
-dev: devmake devenable
-
-devmake:
-	cd $(ROOT) && $(DRUSH) make --no-core --no-gitinfofile ../$(DEVMAKE) .
-
-devenable:
-	# enable our default development modules
-	cd $(ROOT) && $(DRUSH) -y en $(DEVMODULES)
-	# set username and password of user 1 to 'admin'
-	cd $(ROOT) && drush sqlq "update users set name='admin' where uid=1;"
-	cd $(ROOT) && drush upwd admin --password=admin
-	# configuration to make views development easier
-	cd $(ROOT) && drush vset views_ui_show_advanced_help_warning 0
-	cd $(ROOT) && drush vset views_ui_show_master_display 1
-	cd $(ROOT) && drush vset views_ui_show_advanced_column 1
-	cd $(ROOT) && drush vset views_ui_show_sql_query 1
-	# run Makefile.custom if it exists to give to developer the opportunity
-	# to further customize the development environment
-	@if [ -f Makefile.custom ]; \
-	then \
-		$(MAKE) ROOT=$(ROOT) DRUSH=$(DRUSH) -f Makefile.custom devenable; \
-	fi;
+include Makefile.dev
 
 devinstall: install dev
 
